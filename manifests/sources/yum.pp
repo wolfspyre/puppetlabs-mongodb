@@ -1,8 +1,9 @@
 class mongodb::sources::yum inherits mongodb::params {
   yumrepo { '10gen':
-    baseurl   => $mongodb::params::baseurl,
-    gpgcheck  => '0',
     enabled   => '1',
+    baseurl   => $mongodb::params::baseurl,
+    descr     => '10gen',
+    gpgcheck  => '0',
   }
   file {'10gen_repofile':
     ensure  => 'file',
